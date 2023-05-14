@@ -1,1 +1,64 @@
-<button>{{@buttonLabel}}</button>
+{{#if (or (eq @type "medium") (eq @type "relaxed"))}}
+  <div class="{{@type}} font-size-15" >
+    <div class="data" title={{@title}}>{{@title}}</div>
+    {{#if (eq @type "relaxed")}}
+        <p class="subtext secondary-text">{{@subTitle}}</p>
+    {{/if}}
+    <div class="bottom" style={{this.style}}>
+      <span class="value">{{@percentage}}%</span>
+    </div>
+    <div class="sub-text-container">
+      <div class="user">
+        {{#if @userUrl}}
+          <img
+            src={{@userUrl}}
+            alt="user-thumbnail"
+            loading="lazy" 
+            width={{if (eq @type "medium") "18" "40"}}
+            height={{if (eq @type "medium") "18" "40"}}
+          />
+        {{else}}
+          <svg
+            width={{if (eq @type "medium") "18" "40"}}
+            height={{if (eq @type "medium") "18" "40"}}
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="14.9534" cy="15.0779" r="14.8357" fill="#BBDCFE" />
+            <mask
+              id="mask0_2915_6971"
+              maskUnits="userSpaceOnUse"
+              x="0"
+              y="0"
+              width="30"
+              height="30"
+            >
+              <circle cx="14.9539" cy="15.0789" r="14.8357" fill="#BBDCFE" />
+            </mask>
+            <g mask="url(#mask0_2915_6971)">
+              <circle cx="14.9551" cy="10.0171" r="5.37841" fill="#2F80EB" />
+              <path
+                d="M4.91943 25.225C4.91943 20.6161 8.65566 16.8799 13.2645 16.8799H16.6462C21.2551 16.8799 24.9913 20.6161 24.9913 25.225V25.625C24.9913 28.1854 22.9156 30.2611 20.3551 30.2611H9.5556C6.99512 30.2611 4.91943 28.1854 4.91943 25.625V25.225Z"
+                fill="#2F80EB"
+              />
+            </g>
+          </svg>
+        {{/if}}
+        <span
+          class="p-l5 secondary-text
+            {{if (eq @type 'medium') 'font-size-13' ''}}"
+          title={{@userName}}
+        >{{@userName}}</span>
+      </div>
+    </div>
+  </div>
+{{else}}
+  <div class="compact font-size-15">
+    <div class="data" title={{@title}}>{{@title}}</div>
+    <div class="bottom" style={{this.style}}>
+      <div class="value">{{@percentage}}<span>%</span></div>
+    </div>
+  </div>
+{{/if}}
+{{yield}}

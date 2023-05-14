@@ -1,0 +1,5 @@
+@import 'ember-progress-card.css';
+
+.dummy-app > div{
+    margin: 30px;
+}
