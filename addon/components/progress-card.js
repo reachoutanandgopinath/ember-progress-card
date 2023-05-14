@@ -5,4 +5,3 @@ export default class ProgressCardComponent extends Component {
     return htmlSafe(`background:` + this.args.color);
   }
 }
-
