@@ -2,7 +2,6 @@ import Application from '@ember/application';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
 import config from 'dummy/config/environment';
-import { action } from '@ember/object';
 
 
 export default class App extends Application {
