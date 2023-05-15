@@ -1,13 +1,13 @@
 {
   "name": "ember-progress-card",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "A custom UI component which helps to show the progress value.",
   "keywords": [
     "ember-addon",
     "ember-progress-card",
     "progress-card"
   ],
-  "repository": "",
+  "repository": "https://github.com/reachoutanandgopinath/ember-progress-card",
   "license": "MIT",
   "author": "",
   "directories": {
